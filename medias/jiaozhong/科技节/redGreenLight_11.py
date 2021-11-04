@@ -38,7 +38,7 @@ class TrafficLight:
     def bulid_LED_number(self,char:str):
         """
         根据提供的数字来构建电子屏上的数字显示
-        数字显示设计为 - 横五竖七（中间的横六）
+        数字显示设计为 - 横五竖六；并且每块电子屏幕的上、下、左各边空格行列数为5, 12, 5
         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         :param char:提供的数字
         :return:返回构建的电子屏
@@ -47,109 +47,109 @@ class TrafficLight:
         if char == "0":
             for row in range(50):
                 for col in range(40):
-                    if 2 < row < 8 and col > 8 : # 第0行到第4行共5行中的元素都点亮
+                    if 4 < row < 10 and col > 11 : # 第0行到第4行共5行中的元素都点亮
                         temp_LED.light[row][col] = True
-                    if 47 > row > 41 and col > 8: # 第45行到第49行共5行中的元素点亮
+                    if 45 > row > 39 and col > 11: # 第45行到第49行共5行中的元素点亮
                         temp_LED.light[row][col] = True
-                    if 8 < col < 16 and 47 > row > 2: # 第0列到第5列共6列中的元素点亮
+                    if 11 < col < 18 and 45 > row > 4: # 第0列到第5列共6列中的元素点亮
                         temp_LED.light[row][col] = True
-                    if col > 32 and 47 > row > 2: # 第34列到第39列共6列中的元素点亮
+                    if col > 33 and 45 > row > 4: # 第34列到第39列共6列中的元素点亮
                         temp_LED.light[row][col] = True
         # 将上、下、左边各向内缩进两行
 
         elif char == "1":
             for row in range(50):
                 for col in range(40):
-                    if 2 < row < 47 and col > 32: # 第34列到第39列共6列中的元素点亮
+                    if 4 < row < 45 and col > 33: # 第34列到第39列共6列中的元素点亮
                         temp_LED.light[row][col] = True
         # 将上、下边各向内缩进两行
 
         elif char == "2":
             for row in range(50):
                 for col in range(40):
-                    if 2 < row < 8 and col > 8:  # 第0行到第4行共5行中的元素都点亮
+                    if 4 < row < 10 and col > 11:  # 第0行到第4行共5行中的元素都点亮
                         temp_LED.light[row][col] = True
-                    if 2 < row <22 and col >32:
+                    if 4 < row <22 and col > 33:
                         temp_LED.light[row][col] = True
-                    if 21 < row < 28 and col > 8: # row == 22 or row == 23 or row == 24 or row == 25 or row == 26:
+                    if 21 < row < 27 and col > 11: # row == 22 or row == 23 or row == 24 or row == 25 or row == 26:
                         temp_LED.light[row][col] = True
-                    if 47 > row > 27 and 8 < col < 16:
+                    if 45 > row > 26 and 11 < col < 18:
                         temp_LED.light[row][col] = True
-                    if 47 > row > 41 and col > 8:
+                    if 45 > row > 39 and col > 11:
                         temp_LED.light[row][col] = True
 
         elif char == "3":
             for row in range(50):
                 for col in range(40):
-                    if (2 < row < 8 and col > 8) or (47 > row > 41 and col > 8):
+                    if (4 < row < 10 and col > 11) or (45 > row > 39 and col > 11):
                         temp_LED.light[row][col] = True
-                    if  22 <= row <= 27 and col > 8:  #row == 22 or row == 23 or row == 24 or row == 25 or row == 26: 注意此处写法等同于line69#写法
+                    if  22 <= row <= 26 and col > 11:  #row == 22 or row == 23 or row == 24 or row == 25 or row == 26: 注意此处写法等同于line69#写法
                         temp_LED.light[row][col] = True
-                    if col > 32 and 2 < row < 47 :
+                    if col > 33 and 4 < row < 45 :
                         temp_LED.light[row][col] = True
 
         elif char == "4":
             for row in range(50):
                 for col in range(40):
-                    if (row == 22 or row == 23 or row == 24 or row == 25 or row == 26 or row == 27) and col > 8:  #### 注意这个写法。。。
+                    if (row == 22 or row == 23 or row == 24 or row == 25 or row == 26) and col > 11:  #### 注意这个写法。。。
                         temp_LED.light[row][col] = True
-                    if 8 < col < 16 and 2 < row < 22:
+                    if 11 < col < 18 and 4 < row < 22:
                         temp_LED.light[row][col] = True
-                    if col > 32 and 47 > row >2 :
+                    if col > 33 and 45 > row > 4 :
                         temp_LED.light[row][col] = True
 
         elif char == "5":
             for row in range(50):
                 for col in range(40):
-                    if (2 < row < 8 and col > 8) or (47 > row > 41 and col > 8):
+                    if (4 < row < 10 and col > 11) or (45 > row > 39 and col > 11):
                         temp_LED.light[row][col] = True
-                    if (row == 22 or row == 23 or row == 24 or row == 25 or row == 26 or row == 27) and col > 8:
+                    if (row == 22 or row == 23 or row == 24 or row == 25 or row == 26) and col > 11:
                         temp_LED.light[row][col] = True
-                    if 8 < col < 16 and 2 < row < 22:
+                    if 11 < col < 18 and 4 < row < 22:
                         temp_LED.light[row][col] = True
-                    if col > 32 and 47 > row > 27:
+                    if col > 33 and 45 > row > 26:
                         temp_LED.light[row][col] = True
 
         elif char == "6":
             for row in range(50):
                 for col in range(40):
-                    if (2 < row < 8 and col > 8) or (47 > row > 41 and col > 8):
+                    if (4 < row < 10 and col > 11) or (45 > row > 39 and col > 11):
                         temp_LED.light[row][col] = True
-                    if (row == 22 or row == 23 or row == 24 or row == 25 or row == 26 or row == 27) and col > 8:
+                    if (row == 23 or row == 24 or row == 25 or row == 26 or row == 27) and col > 11:
                         temp_LED.light[row][col] = True
-                    if 8 < col < 16 and 2 < row < 47 :
+                    if 11 < col < 18 and 4 < row < 45 :
                         temp_LED.light[row][col] = True
-                    if col >32 and 47 > row > 27 :
+                    if col > 33 and 45 > row > 27 :
                         temp_LED.light[row][col] = True
 
         elif char == "7":
             for row in range(50):
                 for col in range(40):
-                    if 2 < row < 8 and col > 8 :
+                    if 4 < row < 10 and col > 11 :
                         temp_LED.light[row][col] = True
-                    if col > 32 and 2 < row < 47:
+                    if col > 33 and 4 < row < 45:
                         temp_LED.light[row][col] = True
 
         elif char == "8":
             for row in range(50):
                 for col in range(40):
-                    if (2 < row < 8 and col > 8) or (47 > row > 41 and col > 8):
+                    if (4 < row < 10 and col > 11) or (45 > row > 39 and col > 11):
                         temp_LED.light[row][col] = True
-                    if (row == 22 or row == 23 or row == 24 or row == 25 or row == 26 or row == 27) and col > 8:
+                    if (row == 22 or row == 23 or row == 24 or row == 25 or row == 26) and col > 11:
                         temp_LED.light[row][col] = True
-                    if (8 < col < 16  or col > 32) and 2 < row < 47: # row 重叠部分重复涂色，并没有增加色差！！！
+                    if (11 < col < 18  or col > 33) and 4 < row < 45: # row 重叠部分重复涂色，并没有增加色差！！！
                         temp_LED.light[row][col] = True
 
         elif char == "9":
             for row in range(50):
                 for col in range(40):
-                    if (2 < row < 8 and col > 8) or (47 > row > 41 and col > 8):
+                    if (4 < row < 10 and col > 11) or (45 > row > 39 and col > 11):
                         temp_LED.light[row][col] = True
-                    if 6 < row < 22 and 8 < col < 16:
+                    if 6 < row < 22 and 11 < col < 18:
                         temp_LED.light[row][col] = True
-                    if (row == 22 or row == 23 or row == 24 or row == 25 or row == 26 or row == 27) and col > 8:
+                    if (row == 22 or row == 23 or row == 24 or row == 25 or row == 26) and col > 11:
                         temp_LED.light[row][col] = True
-                    if col > 32 and 2 < row < 47:
+                    if col > 33 and 4 < row < 45:
                         temp_LED.light[row][col] = True
         # 返回这个LED
         return temp_LED
@@ -240,20 +240,20 @@ class TrafficLight:
             time = ""
             # 根据颜色提醒输入
             if color.lower() == "green":
-                time = input(Fore.GREEN + "请输入绿灯的时间:")
+                time = input(Fore.GREEN + " Input a pass time for the Green Light: ")
             if color.lower() == "yellow":
-                time = input(Fore.YELLOW + "请输入黄灯的时间:")
+                time = input(Fore.YELLOW + " Input a warming time for the Yellow Light: ")
             if color.lower() == "red":
-                time = input(Fore.RED + "请输入红灯的时间:")
+                time = input(Fore.RED + " Enter a waiting time for the Red Light: ")
             # 校验输入的是否符合要求：数字、正数、1-99
             # 如果不符合要求怎么处理：1. 出现异常，系统退出，报错；2.提醒重新输入
             if not time.isdigit(): # 验证time是否为数字类型，python类型检测方法
-                print("验证输入的数字！因为是两块电子屏，输入的数字应该在1~99之间")
+                print(u"验证输入的数字！因为是两块电子屏，输入的数字应该在1~99之间")
                 continue    # 结束当前循环
             else:
                 time_number = int(time)
                 if time_number < 1 or time_number > 99:
-                    print("输入的值不符合要求！输入的数字应该在1~99之间")
+                    print(u"输入的值不符合要求！输入的数字应该在1~99之间")
                     continue
                 else:
                     # 符合要求
